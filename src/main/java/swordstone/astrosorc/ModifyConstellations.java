@@ -207,21 +207,21 @@ public class ModifyConstellations
         
         ConstellationBase capricornus = clearExistingConstellation(Constellations.armara);
         
-    	sl1 = capricornus.addStar(2, 11);
-    	sl2 = capricornus.addStar(8, 13);
-    	sl3 = capricornus.addStar(8, 21);
-    	sl4 = capricornus.addStar(14, 15);
-    	sl5 = capricornus.addStar(16, 27);
-    	sl6 = capricornus.addStar(24, 15);
-    	sl7 = capricornus.addStar(26, 11);
+        sl1 = capricornus.addStar(2, 11);
+        sl2 = capricornus.addStar(6, 21);
+        sl3 = capricornus.addStar(8, 13);
+        sl4 = capricornus.addStar(14, 15);
+        sl5 = capricornus.addStar(14, 27);
+        sl6 = capricornus.addStar(24, 17);
+        sl7 = capricornus.addStar(26, 13);
     	
         capricornus.addConnection(sl1, sl2);
         capricornus.addConnection(sl1, sl3);
-        capricornus.addConnection(sl2, sl4);
-        capricornus.addConnection(sl4, sl6);
-        capricornus.addConnection(sl6, sl7);
-        capricornus.addConnection(sl3, sl5);
+        capricornus.addConnection(sl3, sl4);
+        capricornus.addConnection(sl2, sl5);
         capricornus.addConnection(sl5, sl6);
+        capricornus.addConnection(sl4, sl7);
+        capricornus.addConnection(sl6, sl7);
         
         ConstellationBase libra = clearExistingConstellation(Constellations.lucerna);
         
