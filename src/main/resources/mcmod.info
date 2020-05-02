@@ -7,9 +7,9 @@
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
-  "authorList": ["Swordstone, HellFirePvP"],
-  "credits": "HellFirePvP for the awesome original Astral Sorcery mod",
-  "logoFile": "assets/logo.jpg",
+  "authorList": ["Swordstone"],
+  "credits": "HellFirePvP & wiiv for the awesome original Astral Sorcery mod. Astrological Sorcery logo background by freepik - www.freepik.com",
+  "logoFile": "assets/astrosorc/textures/logo.png",
   "screenshots": [],
   "dependencies": []
 }
