@@ -32,7 +32,7 @@ public class AstrologicalSorcery
     
     public static Logger logger = LogManager.getLogger(NAME);
     
-    // This entire ensureResourceOrder bit of code is taken from wiiv's MagicalPsi
+    // This entire ensureResourceOrder bit of code is taken from wiiv's Magical Psi mod
     // It serves the purpose of substituting our modified .lang files for the originals
     public AstrologicalSorcery() {
     	ensureResourceOrder();

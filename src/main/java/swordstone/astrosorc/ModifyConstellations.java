@@ -25,18 +25,12 @@ import hellfirepvp.astralsorcery.common.lib.Constellations;
 public class ModifyConstellations
 {
 	public static void init() {
-		try {
-			registerNewConstellations();
-		} catch (NoSuchFieldException e) {
-			e.printStackTrace();
-		} catch (IllegalAccessException e) {
-			e.printStackTrace();
-		}
+		registerNewConstellations();
 	}
 	
 	// TODO: split this up somehow, this thing's massive
-	private static void registerNewConstellations() throws NoSuchFieldException, IllegalAccessException {
-	 	StarLocation sl1, sl2, sl3, sl4, sl5, sl6, sl7, sl8, sl9, sl10, sl11, sl12, sl13, sl14, sl15, sl16, sl17, sl18, sl19, sl20, sl21, sl22;
+	private static void registerNewConstellations() {
+	 	StarLocation sl1, sl2, sl3, sl4, sl5, sl6, sl7, sl8, sl9, sl10, sl11, sl12, sl13, sl14;
 	 	
 		ConstellationBase virgo = clearExistingConstellation(Constellations.aevitas);
     	
@@ -313,6 +307,79 @@ public class ModifyConstellations
     	cancer.addConnection(sl3, sl4);
     	cancer.addConnection(sl4, sl5);
     	cancer.addConnection(sl5, sl6);
+    	
+    	ConstellationBase lyra = clearExistingConstellation(Constellations.alcara);
+    	
+    	sl1 = lyra.addStar(6, 27);
+    	sl2 = lyra.addStar(8, 9);
+    	sl3 = lyra.addStar(14, 25);
+    	sl4 = lyra.addStar(16, 7);
+    	sl5 = lyra.addStar(22, 3);
+    	
+    	lyra.addConnection(sl1, sl2);
+    	lyra.addConnection(sl1, sl3);
+    	lyra.addConnection(sl3, sl4);
+    	lyra.addConnection(sl2, sl4);
+    	lyra.addConnection(sl4, sl5);
+    	
+    	ConstellationBase coronaBorealis = clearExistingConstellation(Constellations.gelu);
+    	
+    	sl1 = coronaBorealis.addStar(2, 11);
+    	sl2 = coronaBorealis.addStar(4, 21);
+    	sl3 = coronaBorealis.addStar(10, 23);
+    	sl4 = coronaBorealis.addStar(16, 23);
+    	sl5 = coronaBorealis.addStar(22, 5);
+    	sl6 = coronaBorealis.addStar(22, 21);
+    	sl7 = coronaBorealis.addStar(26, 13);
+    	
+    	coronaBorealis.addConnection(sl1, sl2);
+    	coronaBorealis.addConnection(sl2, sl3);
+    	coronaBorealis.addConnection(sl3, sl4);
+    	coronaBorealis.addConnection(sl4, sl6);
+    	coronaBorealis.addConnection(sl6, sl7);
+    	coronaBorealis.addConnection(sl7, sl5);
+    	
+    	ConstellationBase scutum = clearExistingConstellation(Constellations.ulteria);
+    	
+    	sl1 = scutum.addStar(6, 3);
+    	sl2 = scutum.addStar(8, 15);
+    	sl3 = scutum.addStar(10, 17);
+    	sl4 = scutum.addStar(16, 11);
+    	sl5 = scutum.addStar(22, 27);
+    	
+    	scutum.addConnection(sl1, sl2);
+    	scutum.addConnection(sl2, sl3);
+    	scutum.addConnection(sl3, sl5);
+    	scutum.addConnection(sl5, sl4);
+    	scutum.addConnection(sl4, sl1);
+    	
+    	ConstellationBase draco = clearExistingConstellation(Constellations.vorux);
+    	
+    	sl1 = draco.addStar(2, 19);
+    	sl2 = draco.addStar(6, 15);
+    	sl3 = draco.addStar(6, 23);
+    	sl4 = draco.addStar(8, 9);
+    	sl5 = draco.addStar(8, 19);
+    	sl6 = draco.addStar(10, 5);
+    	sl7 = draco.addStar(14, 11);
+    	sl8 = draco.addStar(14, 17);
+    	sl9 = draco.addStar(16, 21);
+    	sl10 = draco.addStar(20, 23);
+    	sl11 = draco.addStar(24, 19);
+    	sl12 = draco.addStar(26, 17);
+    	
+    	draco.addConnection(sl1, sl2);
+    	draco.addConnection(sl2, sl4);
+    	draco.addConnection(sl1, sl3);
+    	draco.addConnection(sl3, sl5);
+    	draco.addConnection(sl5, sl2);
+    	draco.addConnection(sl4, sl6);
+    	draco.addConnection(sl6, sl7);
+    	draco.addConnection(sl7, sl8);
+    	draco.addConnection(sl8, sl9);
+    	draco.addConnection(sl9, sl10);
+    	draco.addConnection(sl10, sl11);
+    	draco.addConnection(sl11, sl12);
 	}
 	
 	@SuppressWarnings("unchecked")
@@ -323,7 +390,8 @@ public class ModifyConstellations
 			if (oldBase.getClass().getName().endsWith("ConstellationBase$Weak") || 
 					oldBase.getClass().getName().endsWith("ConstellationBase$Minor")) {
 				c = c.getSuperclass();
-				// Weak -> ConstellationBase
+				// Weak -> ConstellationBase, or
+				// Minor -> ConstellationBase
 			}
 			else if (oldBase.getClass().getName().endsWith("ConstellationBase$Major")) {
 				c = c.getSuperclass().getSuperclass();
