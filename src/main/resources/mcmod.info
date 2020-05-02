@@ -1,0 +1,16 @@
+[
+{
+  "modid": "astrosorc",
+  "name": "Astrological Sorcery",
+  "description": "Astral Sorcery but with Zodiac constellations",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Swordstone, HellFirePvP"],
+  "credits": "HellFirePvP for the awesome original Astral Sorcery mod",
+  "logoFile": "assets/logo.jpg",
+  "screenshots": [],
+  "dependencies": []
+}
+]
