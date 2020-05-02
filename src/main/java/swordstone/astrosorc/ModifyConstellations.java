@@ -162,5 +162,49 @@ public class ModifyConstellations
         aries.addConnection(sl1, sl2);
         aries.addConnection(sl2, sl3);
         aries.addConnection(sl3, sl4);
+        
+        
+        ConstellationBase sagittarius = (ConstellationBase) Constellations.discidia;
+	 	c = sagittarius.getClass().getSuperclass().getSuperclass();
+	 
+	 	// We know exactly what types stars and connections are, so we can do these unchecked casts safely
+		fieldStarLocations = c.getDeclaredField("starLocations");
+		fieldStarLocations.setAccessible(true);
+    	stars = (List<StarLocation>) fieldStarLocations.get(sagittarius);
+    	
+    	fieldConnections = c.getDeclaredField("connections");
+		fieldConnections.setAccessible(true);
+    	connections = (List<StarConnection>) fieldConnections.get(sagittarius);
+        
+    	stars.clear(); // remove existing Discidia constellation stars and connections
+    	connections.clear();
+        
+    	sl1 = sagittarius.addStar(2, 5);
+    	sl2 = sagittarius.addStar(6, 7);
+    	sl3 = sagittarius.addStar(6, 17);
+    	sl4 = sagittarius.addStar(8, 21);
+    	sl5 = sagittarius.addStar(10, 5);
+    	sl6 = sagittarius.addStar(10, 13);
+    	sl7 = sagittarius.addStar(14, 15);
+    	sl8 = sagittarius.addStar(20, 11);
+    	sl9 = sagittarius.addStar(20, 21);
+    	sl10 = sagittarius.addStar(22, 17);
+    	sl11 = sagittarius.addStar(22, 27);
+    	sl12 = sagittarius.addStar(24, 5);
+    	sl13 = sagittarius.addStar(26, 19);
+        
+        sagittarius.addConnection(sl1, sl2);
+        sagittarius.addConnection(sl2, sl5);
+        sagittarius.addConnection(sl3, sl4);
+        sagittarius.addConnection(sl3, sl6);
+        sagittarius.addConnection(sl2, sl6);
+        sagittarius.addConnection(sl6, sl7);
+        sagittarius.addConnection(sl7, sl8);
+        sagittarius.addConnection(sl8, sl10);
+        sagittarius.addConnection(sl10, sl9);
+        sagittarius.addConnection(sl8, sl12);
+        sagittarius.addConnection(sl9, sl11);
+        sagittarius.addConnection(sl10, sl13);
+
 	}
 }
