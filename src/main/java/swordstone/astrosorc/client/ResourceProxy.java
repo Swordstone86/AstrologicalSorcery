@@ -15,6 +15,23 @@ import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.relauncher.ReflectionHelper;
 import swordstone.astrosorc.AstrologicalSorcery;
 
+/**
+ * This class is part of the Astrological Sorcery mod, 
+ * an addon for the original Astral Sorcery mod by HellFirePvP.
+ * 
+ * The complete source code for this mod can be found on GitHub: 
+ * https://github.com/Hydrokinetic/AstrologicalSorcery
+ * 
+ * The code for this class (substituting another mod's resource files)
+ * is taken in large part from wiiv's Magical Psi mod. You can find
+ * that mod on GitHub as well: https://github.com/wiiv/MagicalPsi
+ * 
+ * Class: ResourceProxy
+ * 
+ * Created by Swordstone
+ * 
+ * Date: 5/2/2020
+ */
 public class ResourceProxy extends AbstractResourcePack {
 	public static final String[] DEFAULT_RESOURCE_PACKS = new String[] { "aD", "field_110449_ao", "defaultResourcePacks" };
 

@@ -41,7 +41,7 @@ repositories {
 
 dependencies {
     deobfCompile "astral-sorcery:AstralSorcery:1.12.2:1.10.23"
-    deobfCompile "baubles:Baubles:1.12.2:1.5.2"
+    runtime "baubles:Baubles:1.12.2:1.5.2"
 }
 
 processResources {

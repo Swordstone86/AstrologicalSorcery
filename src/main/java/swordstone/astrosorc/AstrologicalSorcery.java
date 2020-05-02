@@ -8,6 +8,19 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
+/**
+ * This class is part of the Astrological Sorcery mod, 
+ * an addon for the original Astral Sorcery mod by HellFirePvP.
+ * 
+ * The complete source code for this mod can be found on GitHub: 
+ * https://github.com/Hydrokinetic/AstrologicalSorcery
+ *
+ * Class: AstrologicalSorcery
+ * 
+ * Created by Swordstone
+ * 
+ * Date: 5/2/2020
+ */
 @Mod(modid = AstrologicalSorcery.MODID, name = AstrologicalSorcery.NAME, version = AstrologicalSorcery.VERSION, 
 	dependencies = AstrologicalSorcery.DEPENDENCIES)
 public class AstrologicalSorcery
@@ -19,6 +32,8 @@ public class AstrologicalSorcery
     
     public static Logger logger = LogManager.getLogger(NAME);
     
+    // This entire ensureResourceOrder bit of code is taken from wiiv's MagicalPsi
+    // It serves the purpose of substituting our modified .lang files for the originals
     public AstrologicalSorcery() {
     	ensureResourceOrder();
     }
