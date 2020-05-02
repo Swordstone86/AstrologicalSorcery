@@ -4,6 +4,7 @@ import java.lang.reflect.Field;
 import java.util.List;
 
 import hellfirepvp.astralsorcery.common.constellation.ConstellationBase;
+import hellfirepvp.astralsorcery.common.constellation.IConstellation;
 import hellfirepvp.astralsorcery.common.constellation.star.StarConnection;
 import hellfirepvp.astralsorcery.common.constellation.star.StarLocation;
 import hellfirepvp.astralsorcery.common.lib.Constellations;
@@ -35,21 +36,9 @@ public class ModifyConstellations
 	
 	// TODO: split this up somehow, this thing's massive
 	private static void registerNewConstellations() throws NoSuchFieldException, IllegalAccessException {
-		ConstellationBase virgo = (ConstellationBase) Constellations.aevitas;
-	 	Class<?> c = virgo.getClass().getSuperclass().getSuperclass();
 	 	StarLocation sl1, sl2, sl3, sl4, sl5, sl6, sl7, sl8, sl9, sl10, sl11, sl12, sl13, sl14, sl15, sl16, sl17, sl18, sl19, sl20, sl21, sl22;
 	 	
-	 	// We know exactly what types stars and connections are, so we can do these unchecked casts safely
-		Field fieldStarLocations = c.getDeclaredField("starLocations");
-		fieldStarLocations.setAccessible(true);
-    	List<StarLocation> stars = (List<StarLocation>) fieldStarLocations.get(virgo);
-    	
-    	Field fieldConnections = c.getDeclaredField("connections");
-		fieldConnections.setAccessible(true);
-    	List<StarConnection> connections = (List<StarConnection>) fieldConnections.get(virgo);
-    	
-    	stars.clear(); // remove existing Aevitas constellation stars and connections
-    	connections.clear();
+		ConstellationBase virgo = clearExistingConstellation(Constellations.aevitas);
     	
     	sl1 = virgo.addStar(2, 21);
     	sl2 = virgo.addStar(4, 27);
@@ -79,20 +68,7 @@ public class ModifyConstellations
     	virgo.addConnection(sl8, sl5);
     	virgo.addConnection(sl8, sl11);
         
-        ConstellationBase pisces = (ConstellationBase) Constellations.octans;
-	 	c = pisces.getClass().getSuperclass();
-	 
-	 	// We know exactly what types stars and connections are, so we can do these unchecked casts safely
-		fieldStarLocations = c.getDeclaredField("starLocations");
-		fieldStarLocations.setAccessible(true);
-    	stars = (List<StarLocation>) fieldStarLocations.get(pisces);
-    	
-    	fieldConnections = c.getDeclaredField("connections");
-		fieldConnections.setAccessible(true);
-    	connections = (List<StarConnection>) fieldConnections.get(pisces);
-    	
-    	stars.clear(); // remove existing Octans constellation stars and connections
-    	connections.clear();
+    	ConstellationBase pisces = clearExistingConstellation(Constellations.octans);
         
     	sl1 = pisces.addStar(4, 9);
     	sl2 = pisces.addStar(6, 7);
@@ -123,20 +99,7 @@ public class ModifyConstellations
         pisces.addConnection(sl10, sl12);
         pisces.addConnection(sl13, sl12);
         
-        ConstellationBase taurus = (ConstellationBase) Constellations.mineralis;
-	 	c = taurus.getClass().getSuperclass();
-	 
-	 	// We know exactly what types stars and connections are, so we can do these unchecked casts safely
-		fieldStarLocations = c.getDeclaredField("starLocations");
-		fieldStarLocations.setAccessible(true);
-    	stars = (List<StarLocation>) fieldStarLocations.get(taurus);
-    	
-    	fieldConnections = c.getDeclaredField("connections");
-		fieldConnections.setAccessible(true);
-    	connections = (List<StarConnection>) fieldConnections.get(taurus);
-        
-    	stars.clear(); // remove existing Mineralis constellation stars and connections
-    	connections.clear();
+        ConstellationBase taurus = clearExistingConstellation(Constellations.mineralis);
     	
         sl1 = taurus.addStar(2, 9);
         sl2 = taurus.addStar(8, 3);
@@ -155,20 +118,7 @@ public class ModifyConstellations
         taurus.addConnection(sl6, sl7);
         taurus.addConnection(sl7, sl8);
         
-        ConstellationBase aries = (ConstellationBase) Constellations.evorsio;
-	 	c = aries.getClass().getSuperclass().getSuperclass();
-	 
-	 	// We know exactly what types stars and connections are, so we can do these unchecked casts safely
-		fieldStarLocations = c.getDeclaredField("starLocations");
-		fieldStarLocations.setAccessible(true);
-    	stars = (List<StarLocation>) fieldStarLocations.get(aries);
-    	
-    	fieldConnections = c.getDeclaredField("connections");
-		fieldConnections.setAccessible(true);
-    	connections = (List<StarConnection>) fieldConnections.get(aries);
-        
-    	stars.clear(); // remove existing Evorsio constellation stars and connections
-    	connections.clear();
+        ConstellationBase aries = clearExistingConstellation(Constellations.evorsio);
         
     	sl1 = aries.addStar(2, 9);
     	sl2 = aries.addStar(18, 11);
@@ -179,20 +129,7 @@ public class ModifyConstellations
         aries.addConnection(sl2, sl3);
         aries.addConnection(sl3, sl4);
         
-        ConstellationBase sagittarius = (ConstellationBase) Constellations.discidia;
-	 	c = sagittarius.getClass().getSuperclass().getSuperclass();
-	 
-	 	// We know exactly what types stars and connections are, so we can do these unchecked casts safely
-		fieldStarLocations = c.getDeclaredField("starLocations");
-		fieldStarLocations.setAccessible(true);
-    	stars = (List<StarLocation>) fieldStarLocations.get(sagittarius);
-    	
-    	fieldConnections = c.getDeclaredField("connections");
-		fieldConnections.setAccessible(true);
-    	connections = (List<StarConnection>) fieldConnections.get(sagittarius);
-        
-    	stars.clear(); // remove existing Discidia constellation stars and connections
-    	connections.clear();
+        ConstellationBase sagittarius = clearExistingConstellation(Constellations.discidia);
         
     	sl1 = sagittarius.addStar(2, 5);
     	sl2 = sagittarius.addStar(6, 7);
@@ -221,20 +158,7 @@ public class ModifyConstellations
         sagittarius.addConnection(sl9, sl11);
         sagittarius.addConnection(sl10, sl13);
 
-        ConstellationBase leo = (ConstellationBase) Constellations.fornax;
-	 	c = leo.getClass().getSuperclass();
-	 
-	 	// We know exactly what types stars and connections are, so we can do these unchecked casts safely
-		fieldStarLocations = c.getDeclaredField("starLocations");
-		fieldStarLocations.setAccessible(true);
-    	stars = (List<StarLocation>) fieldStarLocations.get(leo);
-    	
-    	fieldConnections = c.getDeclaredField("connections");
-		fieldConnections.setAccessible(true);
-    	connections = (List<StarConnection>) fieldConnections.get(leo);
-        
-    	stars.clear(); // remove existing Fornax constellation stars and connections
-    	connections.clear();
+        ConstellationBase leo = clearExistingConstellation(Constellations.fornax);
         
     	sl1 = leo.addStar(2, 23);
     	sl2 = leo.addStar(4, 17);
@@ -256,20 +180,7 @@ public class ModifyConstellations
         leo.addConnection(sl5, sl7);
         leo.addConnection(sl7, sl9);
         
-        ConstellationBase gemini = (ConstellationBase) Constellations.vicio;
-	 	c = gemini.getClass().getSuperclass().getSuperclass();
-	 
-	 	// We know exactly what types stars and connections are, so we can do these unchecked casts safely
-		fieldStarLocations = c.getDeclaredField("starLocations");
-		fieldStarLocations.setAccessible(true);
-    	stars = (List<StarLocation>) fieldStarLocations.get(gemini);
-    	
-    	fieldConnections = c.getDeclaredField("connections");
-		fieldConnections.setAccessible(true);
-    	connections = (List<StarConnection>) fieldConnections.get(gemini);
-        
-    	stars.clear(); // remove existing Vicio constellation stars and connections
-    	connections.clear();
+        ConstellationBase gemini = clearExistingConstellation(Constellations.vicio);
         
         sl1 = gemini.addStar(2, 7);
         sl2 = gemini.addStar(2, 15);
@@ -300,20 +211,7 @@ public class ModifyConstellations
         gemini.addConnection(sl8, sl11);
         gemini.addConnection(sl8, sl12);
         
-        ConstellationBase capricornus = (ConstellationBase) Constellations.armara;
-	 	c = capricornus.getClass().getSuperclass().getSuperclass();
-	 
-	 	// We know exactly what types stars and connections are, so we can do these unchecked casts safely
-		fieldStarLocations = c.getDeclaredField("starLocations");
-		fieldStarLocations.setAccessible(true);
-    	stars = (List<StarLocation>) fieldStarLocations.get(capricornus);
-    	
-    	fieldConnections = c.getDeclaredField("connections");
-		fieldConnections.setAccessible(true);
-    	connections = (List<StarConnection>) fieldConnections.get(capricornus);
-        
-    	stars.clear(); // remove existing Armara constellation stars and connections
-    	connections.clear();
+        ConstellationBase capricornus = clearExistingConstellation(Constellations.armara);
         
     	sl1 = capricornus.addStar(2, 11);
     	sl2 = capricornus.addStar(8, 13);
@@ -331,20 +229,7 @@ public class ModifyConstellations
         capricornus.addConnection(sl3, sl5);
         capricornus.addConnection(sl5, sl6);
         
-        ConstellationBase libra = (ConstellationBase) Constellations.lucerna;
-	 	c = libra.getClass().getSuperclass();
-	 
-	 	// We know exactly what types stars and connections are, so we can do these unchecked casts safely
-		fieldStarLocations = c.getDeclaredField("starLocations");
-		fieldStarLocations.setAccessible(true);
-    	stars = (List<StarLocation>) fieldStarLocations.get(libra);
-    	
-    	fieldConnections = c.getDeclaredField("connections");
-		fieldConnections.setAccessible(true);
-    	connections = (List<StarConnection>) fieldConnections.get(libra);
-        
-    	stars.clear(); // remove existing Lucerna constellation stars and connections
-    	connections.clear();
+        ConstellationBase libra = clearExistingConstellation(Constellations.lucerna);
         
         sl1 = libra.addStar(4, 13);
         sl2 = libra.addStar(6, 27);
@@ -362,20 +247,7 @@ public class ModifyConstellations
         libra.addConnection(sl2, sl3);
         libra.addConnection(sl3, sl6);
         
-        ConstellationBase aquarius = (ConstellationBase) Constellations.bootes;
-	 	c = aquarius.getClass().getSuperclass();
-	 
-	 	// We know exactly what types stars and connections are, so we can do these unchecked casts safely
-		fieldStarLocations = c.getDeclaredField("starLocations");
-		fieldStarLocations.setAccessible(true);
-    	stars = (List<StarLocation>) fieldStarLocations.get(aquarius);
-    	
-    	fieldConnections = c.getDeclaredField("connections");
-		fieldConnections.setAccessible(true);
-    	connections = (List<StarConnection>) fieldConnections.get(aquarius);
-        
-    	stars.clear(); // remove existing Bootes constellation stars and connections
-    	connections.clear();
+        ConstellationBase aquarius = clearExistingConstellation(Constellations.bootes);
         
     	sl1 = aquarius.addStar(2, 7);
     	sl2 = aquarius.addStar(4, 23);
@@ -400,21 +272,7 @@ public class ModifyConstellations
         aquarius.addConnection(sl8, sl10);
         aquarius.addConnection(sl10, sl11);
         
-        ConstellationBase scorpius = (ConstellationBase) Constellations.horologium;
-	 	c = scorpius.getClass().getSuperclass().getSuperclass().getSuperclass();
-	 	// RegistryConstellations -> WeakSpecial -> Weak -> ConstellationBase
-	 
-	 	// We know exactly what types stars and connections are, so we can do these unchecked casts safely
-		fieldStarLocations = c.getDeclaredField("starLocations");
-		fieldStarLocations.setAccessible(true);
-    	stars = (List<StarLocation>) fieldStarLocations.get(scorpius);
-    	
-    	fieldConnections = c.getDeclaredField("connections");
-		fieldConnections.setAccessible(true);
-    	connections = (List<StarConnection>) fieldConnections.get(scorpius);
-        
-    	stars.clear(); // remove existing Horologium constellation stars and connections
-    	connections.clear();
+        ConstellationBase scorpius = clearExistingConstellation(Constellations.horologium);
         
         sl1 = scorpius.addStar(2, 21);
         sl2 = scorpius.addStar(4, 19);
@@ -441,21 +299,7 @@ public class ModifyConstellations
         scorpius.addConnection(sl9, sl11);
         scorpius.addConnection(sl9, sl12);
         
-        ConstellationBase cancer = (ConstellationBase) Constellations.pelotrio;
-	 	c = cancer.getClass().getSuperclass().getSuperclass().getSuperclass();
-	 	// RegistryConstellations -> WeakSpecial -> Weak -> ConstellationBase
-	 
-	 	// We know exactly what types stars and connections are, so we can do these unchecked casts safely
-		fieldStarLocations = c.getDeclaredField("starLocations");
-		fieldStarLocations.setAccessible(true);
-    	stars = (List<StarLocation>) fieldStarLocations.get(cancer);
-    	
-    	fieldConnections = c.getDeclaredField("connections");
-		fieldConnections.setAccessible(true);
-    	connections = (List<StarConnection>) fieldConnections.get(cancer);
-        
-    	stars.clear(); // remove existing Pelotrio constellation stars and connections
-    	connections.clear();
+        ConstellationBase cancer = clearExistingConstellation(Constellations.pelotrio);
     	
     	sl1 = cancer.addStar(8, 23);
     	sl2 = cancer.addStar(12, 3);
@@ -469,5 +313,44 @@ public class ModifyConstellations
     	cancer.addConnection(sl3, sl4);
     	cancer.addConnection(sl4, sl5);
     	cancer.addConnection(sl5, sl6);
+	}
+	
+	@SuppressWarnings("unchecked")
+	private static ConstellationBase clearExistingConstellation(IConstellation old) {
+		ConstellationBase oldBase = (ConstellationBase) old;
+		try {
+			Class<?> c = oldBase.getClass();;
+			if (oldBase.getClass().getName().endsWith("ConstellationBase$Weak") || 
+					oldBase.getClass().getName().endsWith("ConstellationBase$Minor")) {
+				c = c.getSuperclass();
+				// Weak -> ConstellationBase
+			}
+			else if (oldBase.getClass().getName().endsWith("ConstellationBase$Major")) {
+				c = c.getSuperclass().getSuperclass();
+				// Major -> Weak -> ConstellationBase
+			}
+			else if (oldBase.getClass().getName().contains("RegistryConstellations")) {
+				c = c.getSuperclass().getSuperclass().getSuperclass();
+				// RegistryConstellations -> WeakSpecial -> Weak -> ConstellationBase
+				// (why are special constellations so weird)
+			}
+			Field fieldStarLocations = c.getDeclaredField("starLocations");
+			fieldStarLocations.setAccessible(true);
+	    	List<StarLocation> stars = (List<StarLocation>) fieldStarLocations.get(oldBase);
+	    	
+	    	Field fieldConnections = c.getDeclaredField("connections");
+			fieldConnections.setAccessible(true);
+	    	List<StarConnection> connections = (List<StarConnection>) fieldConnections.get(oldBase);
+	    	
+	    	stars.clear();
+	    	connections.clear();
+	    	
+	    	return oldBase;
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		} catch (NoSuchFieldException e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 }
