@@ -66,33 +66,33 @@ public class ModifyConstellations
         
     	sl1 = pisces.addStar(4, 9);
     	sl2 = pisces.addStar(6, 7);
-    	sl3 = pisces.addStar(8, 13);
-    	sl4 = pisces.addStar(10, 21);
-    	sl5 = pisces.addStar(12, 29);
-    	sl6 = pisces.addStar(14, 21);
+    	sl3 = pisces.addStar(8, 11);
+    	sl4 = pisces.addStar(10, 19);
+    	sl5 = pisces.addStar(12, 27);
+    	sl6 = pisces.addStar(14, 19);
     	sl7 = pisces.addStar(16, 15);
-    	sl8 = pisces.addStar(18, 11);
-    	sl9 = pisces.addStar(20, 7);
+    	sl8 = pisces.addStar(18, 9);
+    	sl9 = pisces.addStar(20, 5);
     	sl10 = pisces.addStar(22, 3);
-    	sl11 = pisces.addStar(24, 11);
-    	sl12 = pisces.addStar(26, 3);
-    	sl13 = pisces.addStar(28, 7);
+    	sl11 = pisces.addStar(22, 7);
+    	sl12 = pisces.addStar(24, 3);
+    	sl13 = pisces.addStar(24, 5);
         
-        pisces.addConnection(sl1, sl2);
-        pisces.addConnection(sl2, sl3);
-        pisces.addConnection(sl3, sl1);
-        pisces.addConnection(sl3, sl4);
-        pisces.addConnection(sl4, sl5);
-        pisces.addConnection(sl5, sl6);
-        pisces.addConnection(sl6, sl7);
-        pisces.addConnection(sl7, sl8);
-        pisces.addConnection(sl8, sl9);
-        pisces.addConnection(sl9, sl10);
-        pisces.addConnection(sl9, sl11);
-        pisces.addConnection(sl11, sl13);
-        pisces.addConnection(sl10, sl12);
-        pisces.addConnection(sl13, sl12);
-        
+    	pisces.addConnection(sl1, sl2);
+    	pisces.addConnection(sl2, sl3);
+    	pisces.addConnection(sl3, sl1);
+    	pisces.addConnection(sl3, sl4);
+    	pisces.addConnection(sl4, sl5);
+    	pisces.addConnection(sl5, sl6);
+    	pisces.addConnection(sl6, sl7);
+    	pisces.addConnection(sl7, sl8);
+    	pisces.addConnection(sl8, sl9);
+    	pisces.addConnection(sl9, sl10);
+    	pisces.addConnection(sl10, sl12);
+    	pisces.addConnection(sl12, sl13);
+    	pisces.addConnection(sl13, sl11);
+    	pisces.addConnection(sl11, sl9);
+    	
         ConstellationBase taurus = clearExistingConstellation(Constellations.mineralis);
     	
         sl1 = taurus.addStar(2, 9);
@@ -102,7 +102,6 @@ public class ModifyConstellations
         sl5 = taurus.addStar(16, 17);
         sl6 = taurus.addStar(20, 21);
         sl7 = taurus.addStar(26, 25);
-        sl8 = taurus.addStar(28, 27);
         
         taurus.addConnection(sl1, sl3);
         taurus.addConnection(sl2, sl4);
@@ -110,14 +109,13 @@ public class ModifyConstellations
         taurus.addConnection(sl3, sl5);
         taurus.addConnection(sl5, sl6);
         taurus.addConnection(sl6, sl7);
-        taurus.addConnection(sl7, sl8);
         
         ConstellationBase aries = clearExistingConstellation(Constellations.evorsio);
         
-    	sl1 = aries.addStar(2, 9);
-    	sl2 = aries.addStar(18, 11);
-    	sl3 = aries.addStar(26, 15);
-    	sl4 = aries.addStar(28, 17);
+        sl1 = aries.addStar(2, 9);
+        sl2 = aries.addStar(16, 11);
+        sl3 = aries.addStar(24, 15);
+        sl4 = aries.addStar(26, 17);
         
         aries.addConnection(sl1, sl2);
         aries.addConnection(sl2, sl3);
