@@ -152,26 +152,26 @@ public class ModifyConstellations
 
         ConstellationBase leo = clearExistingConstellation(Constellations.fornax);
         
-    	sl1 = leo.addStar(2, 23);
-    	sl2 = leo.addStar(4, 17);
-    	sl3 = leo.addStar(8, 21);
-    	sl4 = leo.addStar(14, 15);
-    	sl5 = leo.addStar(16, 11);
-    	sl6 = leo.addStar(20, 17);
-    	sl7 = leo.addStar(22, 5);
-    	sl8 = leo.addStar(22, 23);
-    	sl9 = leo.addStar(26, 9);
+        sl1 = leo.addStar(2, 25);
+        sl2 = leo.addStar(8, 17);
+        sl3 = leo.addStar(10, 23);
+        sl4 = leo.addStar(18, 11);
+        sl5 = leo.addStar(18, 15);
+        sl6 = leo.addStar(22, 5);
+        sl7 = leo.addStar(22, 17);
+        sl8 = leo.addStar(24, 23);
+        sl9 = leo.addStar(26, 7);
     	
         leo.addConnection(sl1, sl2);
         leo.addConnection(sl1, sl3);
+        leo.addConnection(sl2, sl5);
         leo.addConnection(sl3, sl8);
-        leo.addConnection(sl2, sl4);
-        leo.addConnection(sl4, sl5);
+        leo.addConnection(sl8, sl7);
+        leo.addConnection(sl7, sl5);
+        leo.addConnection(sl5, sl4);
         leo.addConnection(sl4, sl6);
-        leo.addConnection(sl6, sl8);
-        leo.addConnection(sl5, sl7);
-        leo.addConnection(sl7, sl9);
-        
+        leo.addConnection(sl6, sl9);
+
         ConstellationBase gemini = clearExistingConstellation(Constellations.vicio);
         
         sl1 = gemini.addStar(2, 7);
