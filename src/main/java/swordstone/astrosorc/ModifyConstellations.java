@@ -351,33 +351,26 @@ public class ModifyConstellations
     	scutum.addConnection(sl5, sl4);
     	scutum.addConnection(sl4, sl1);
     	
-    	ConstellationBase draco = clearExistingConstellation(Constellations.vorux);
+    	ConstellationBase ophiuchus = clearExistingConstellation(Constellations.vorux);
     	
-    	sl1 = draco.addStar(2, 19);
-    	sl2 = draco.addStar(6, 15);
-    	sl3 = draco.addStar(6, 23);
-    	sl4 = draco.addStar(8, 9);
-    	sl5 = draco.addStar(8, 19);
-    	sl6 = draco.addStar(10, 5);
-    	sl7 = draco.addStar(14, 11);
-    	sl8 = draco.addStar(14, 17);
-    	sl9 = draco.addStar(16, 21);
-    	sl10 = draco.addStar(20, 23);
-    	sl11 = draco.addStar(24, 19);
-    	sl12 = draco.addStar(26, 17);
+    	sl1 = ophiuchus.addStar(2, 23);
+    	sl2 = ophiuchus.addStar(6, 13);
+    	sl3 = ophiuchus.addStar(8, 11);
+    	sl4 = ophiuchus.addStar(10, 3);
+    	sl5 = ophiuchus.addStar(12, 27);
+    	sl6 = ophiuchus.addStar(18, 5);
+    	sl7 = ophiuchus.addStar(20, 25);
+    	sl8 = ophiuchus.addStar(26, 19);
     	
-    	draco.addConnection(sl1, sl2);
-    	draco.addConnection(sl2, sl4);
-    	draco.addConnection(sl1, sl3);
-    	draco.addConnection(sl3, sl5);
-    	draco.addConnection(sl5, sl2);
-    	draco.addConnection(sl4, sl6);
-    	draco.addConnection(sl6, sl7);
-    	draco.addConnection(sl7, sl8);
-    	draco.addConnection(sl8, sl9);
-    	draco.addConnection(sl9, sl10);
-    	draco.addConnection(sl10, sl11);
-    	draco.addConnection(sl11, sl12);
+    	ophiuchus.addConnection(sl1, sl2);
+    	ophiuchus.addConnection(sl2, sl3);
+    	ophiuchus.addConnection(sl3, sl4);
+    	ophiuchus.addConnection(sl3, sl5);
+    	ophiuchus.addConnection(sl5, sl7);
+    	ophiuchus.addConnection(sl7, sl8);
+    	ophiuchus.addConnection(sl8, sl6);
+    	ophiuchus.addConnection(sl6, sl4);
+
 	}
 	
 	@SuppressWarnings("unchecked")
