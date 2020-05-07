@@ -2,15 +2,13 @@
 {
   "modid": "astrosorc",
   "name": "Astrological Sorcery",
-  "description": "Astral Sorcery but with Zodiac constellations",
+  "description": "Astral Sorcery but with zodiac constellations",
   "version": "${version}",
   "mcversion": "${mcversion}",
-  "url": "",
+  "url": "https://www.curseforge.com/minecraft/mc-mods/astrological-sorcery",
   "updateUrl": "",
   "authorList": ["Swordstone"],
   "credits": "HellFirePvP & wiiv for the awesome original Astral Sorcery mod. Astrological Sorcery logo background by freepik - www.freepik.com",
-  "logoFile": "assets/astrosorc/textures/logo.png",
-  "screenshots": [],
-  "dependencies": []
+  "logoFile": "assets/astrosorc/textures/banner.png"
 }
 ]
