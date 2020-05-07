@@ -27,8 +27,8 @@ public class AstrologicalSorcery
 {
     public static final String MODID = "astrosorc";
     public static final String NAME = "Astrological Sorcery";
-    public static final String VERSION = "0.0.1";
-    public static final String DEPENDENCIES = "required-after:astralsorcery";
+    public static final String VERSION = "1.1.2";
+    public static final String DEPENDENCIES = "required-after:astralsorcery@[1.8.5,)";
     
     public static Logger logger = LogManager.getLogger(NAME);
     

@@ -28,7 +28,6 @@ public class ModifyConstellations
 		registerNewConstellations();
 	}
 	
-	// TODO: split this up somehow, this thing's massive
 	private static void registerNewConstellations() {
 	 	StarLocation sl1, sl2, sl3, sl4, sl5, sl6, sl7, sl8, sl9, sl10, sl11, sl12, sl13, sl14;
 	 	
