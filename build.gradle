@@ -35,15 +35,16 @@ minecraft {
 
 repositories {
     maven { // Baubles, Astral Sorcery
-        url = "http://minecraft.curseforge.com/api/maven/"
+        name = "CurseMaven"
+        url = "https://www.cursemaven.com"
     }
 }
 
 dependencies {
 	def mc_version = "1.12"
 
-    deobfCompile "astral-sorcery:AstralSorcery:1.12.2:1.10.23"
-    runtime "baubles:Baubles:1.12.2:1.5.2"
+    deobfCompile "curse.maven:astralsorcery-241721:3044416"
+    runtime "curse.maven:Baubles-227083:2518667"
 }
 
 processResources {
