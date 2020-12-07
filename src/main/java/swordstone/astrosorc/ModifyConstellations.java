@@ -3,11 +3,13 @@ package swordstone.astrosorc;
 import java.lang.reflect.Field;
 import java.util.List;
 
-import hellfirepvp.astralsorcery.common.constellation.ConstellationBase;
+import hellfirepvp.astralsorcery.common.constellation.BaseConstellation;
 import hellfirepvp.astralsorcery.common.constellation.IConstellation;
 import hellfirepvp.astralsorcery.common.constellation.star.StarConnection;
 import hellfirepvp.astralsorcery.common.constellation.star.StarLocation;
-import hellfirepvp.astralsorcery.common.lib.Constellations;
+import hellfirepvp.astralsorcery.common.lib.ConstellationsAS;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * This class is part of the Astrological Sorcery mod, 
@@ -31,7 +33,7 @@ public class ModifyConstellations
 	private static void registerNewConstellations() {
 	 	StarLocation sl1, sl2, sl3, sl4, sl5, sl6, sl7, sl8, sl9, sl10, sl11, sl12, sl13, sl14;
 	 	
-		ConstellationBase virgo = clearExistingConstellation(Constellations.aevitas);
+		BaseConstellation virgo = clearExistingConstellation(ConstellationsAS.aevitas);
     	
     	sl1 = virgo.addStar(2, 21);
     	sl2 = virgo.addStar(4, 27);
@@ -61,7 +63,7 @@ public class ModifyConstellations
     	virgo.addConnection(sl8, sl5);
     	virgo.addConnection(sl8, sl11);
         
-    	ConstellationBase pisces = clearExistingConstellation(Constellations.octans);
+    	BaseConstellation pisces = clearExistingConstellation(ConstellationsAS.octans);
         
     	sl1 = pisces.addStar(4, 9);
     	sl2 = pisces.addStar(6, 7);
@@ -92,7 +94,7 @@ public class ModifyConstellations
     	pisces.addConnection(sl13, sl11);
     	pisces.addConnection(sl11, sl9);
     	
-        ConstellationBase taurus = clearExistingConstellation(Constellations.mineralis);
+        BaseConstellation taurus = clearExistingConstellation(ConstellationsAS.mineralis);
     	
         sl1 = taurus.addStar(2, 9);
         sl2 = taurus.addStar(8, 3);
@@ -109,7 +111,7 @@ public class ModifyConstellations
         taurus.addConnection(sl5, sl6);
         taurus.addConnection(sl6, sl7);
         
-        ConstellationBase aries = clearExistingConstellation(Constellations.evorsio);
+        BaseConstellation aries = clearExistingConstellation(ConstellationsAS.evorsio);
         
         sl1 = aries.addStar(2, 9);
         sl2 = aries.addStar(16, 11);
@@ -120,7 +122,7 @@ public class ModifyConstellations
         aries.addConnection(sl2, sl3);
         aries.addConnection(sl3, sl4);
         
-        ConstellationBase sagittarius = clearExistingConstellation(Constellations.discidia);
+        BaseConstellation sagittarius = clearExistingConstellation(ConstellationsAS.discidia);
         
     	sl1 = sagittarius.addStar(2, 5);
     	sl2 = sagittarius.addStar(6, 7);
@@ -149,7 +151,7 @@ public class ModifyConstellations
         sagittarius.addConnection(sl9, sl11);
         sagittarius.addConnection(sl10, sl13);
 
-        ConstellationBase leo = clearExistingConstellation(Constellations.fornax);
+        BaseConstellation leo = clearExistingConstellation(ConstellationsAS.fornax);
         
         sl1 = leo.addStar(2, 25);
         sl2 = leo.addStar(8, 17);
@@ -171,7 +173,7 @@ public class ModifyConstellations
         leo.addConnection(sl4, sl6);
         leo.addConnection(sl6, sl9);
 
-        ConstellationBase gemini = clearExistingConstellation(Constellations.vicio);
+        BaseConstellation gemini = clearExistingConstellation(ConstellationsAS.vicio);
         
         sl1 = gemini.addStar(2, 7);
         sl2 = gemini.addStar(2, 15);
@@ -202,7 +204,7 @@ public class ModifyConstellations
         gemini.addConnection(sl8, sl11);
         gemini.addConnection(sl8, sl12);
         
-        ConstellationBase capricornus = clearExistingConstellation(Constellations.armara);
+        BaseConstellation capricornus = clearExistingConstellation(ConstellationsAS.armara);
         
         sl1 = capricornus.addStar(2, 11);
         sl2 = capricornus.addStar(6, 21);
@@ -220,7 +222,7 @@ public class ModifyConstellations
         capricornus.addConnection(sl4, sl7);
         capricornus.addConnection(sl6, sl7);
         
-        ConstellationBase libra = clearExistingConstellation(Constellations.lucerna);
+        BaseConstellation libra = clearExistingConstellation(ConstellationsAS.lucerna);
         
         sl1 = libra.addStar(4, 13);
         sl2 = libra.addStar(6, 27);
@@ -238,7 +240,7 @@ public class ModifyConstellations
         libra.addConnection(sl2, sl3);
         libra.addConnection(sl3, sl6);
         
-        ConstellationBase aquarius = clearExistingConstellation(Constellations.bootes);
+        BaseConstellation aquarius = clearExistingConstellation(ConstellationsAS.bootes);
         
     	sl1 = aquarius.addStar(2, 7);
     	sl2 = aquarius.addStar(4, 23);
@@ -263,7 +265,7 @@ public class ModifyConstellations
         aquarius.addConnection(sl8, sl10);
         aquarius.addConnection(sl10, sl11);
         
-        ConstellationBase scorpius = clearExistingConstellation(Constellations.horologium);
+        BaseConstellation scorpius = clearExistingConstellation(ConstellationsAS.horologium);
         
         sl1 = scorpius.addStar(2, 21);
         sl2 = scorpius.addStar(4, 19);
@@ -290,7 +292,7 @@ public class ModifyConstellations
         scorpius.addConnection(sl9, sl11);
         scorpius.addConnection(sl9, sl12);
         
-        ConstellationBase cancer = clearExistingConstellation(Constellations.pelotrio);
+        BaseConstellation cancer = clearExistingConstellation(ConstellationsAS.pelotrio);
     	
     	sl1 = cancer.addStar(8, 23);
     	sl2 = cancer.addStar(12, 3);
@@ -305,7 +307,7 @@ public class ModifyConstellations
     	cancer.addConnection(sl4, sl5);
     	cancer.addConnection(sl5, sl6);
     	
-    	ConstellationBase lyra = clearExistingConstellation(Constellations.alcara);
+    	BaseConstellation lyra = clearExistingConstellation(ConstellationsAS.alcara);
     	
     	sl1 = lyra.addStar(6, 27);
     	sl2 = lyra.addStar(8, 9);
@@ -319,7 +321,7 @@ public class ModifyConstellations
     	lyra.addConnection(sl2, sl4);
     	lyra.addConnection(sl4, sl5);
     	
-    	ConstellationBase coronaBorealis = clearExistingConstellation(Constellations.gelu);
+    	BaseConstellation coronaBorealis = clearExistingConstellation(ConstellationsAS.gelu);
     	
     	sl1 = coronaBorealis.addStar(2, 11);
     	sl2 = coronaBorealis.addStar(4, 21);
@@ -336,7 +338,7 @@ public class ModifyConstellations
     	coronaBorealis.addConnection(sl6, sl7);
     	coronaBorealis.addConnection(sl7, sl5);
     	
-    	ConstellationBase scutum = clearExistingConstellation(Constellations.ulteria);
+    	BaseConstellation scutum = clearExistingConstellation(ConstellationsAS.ulteria);
     	
     	sl1 = scutum.addStar(6, 3);
     	sl2 = scutum.addStar(8, 15);
@@ -350,7 +352,7 @@ public class ModifyConstellations
     	scutum.addConnection(sl5, sl4);
     	scutum.addConnection(sl4, sl1);
     	
-    	ConstellationBase ophiuchus = clearExistingConstellation(Constellations.vorux);
+    	BaseConstellation ophiuchus = clearExistingConstellation(ConstellationsAS.vorux);
     	
     	sl1 = ophiuchus.addStar(2, 23);
     	sl2 = ophiuchus.addStar(6, 13);
@@ -373,24 +375,28 @@ public class ModifyConstellations
 	}
 	
 	@SuppressWarnings("unchecked")
-	private static ConstellationBase clearExistingConstellation(IConstellation old) {
-		ConstellationBase oldBase = (ConstellationBase) old;
+	private static BaseConstellation clearExistingConstellation(IConstellation old) {
+		BaseConstellation oldBase = (BaseConstellation) old;
+
+		Logger logger = LogManager.getLogger(AstrologicalSorcery.NAME);
+
 		try {
-			Class<?> c = oldBase.getClass();;
-			if (oldBase.getClass().getName().endsWith("ConstellationBase$Weak") || 
-					oldBase.getClass().getName().endsWith("ConstellationBase$Minor")) {
-				c = c.getSuperclass();
-				// Weak -> ConstellationBase, or
-				// Minor -> ConstellationBase
-			}
-			else if (oldBase.getClass().getName().endsWith("ConstellationBase$Major")) {
+			Class<?> c = oldBase.getClass();
+			logger.debug(c.getName());
+			if (c.getName().endsWith("Constellation$Weak") ||
+					c.getName().endsWith("Constellation$Minor")) {
 				c = c.getSuperclass().getSuperclass();
-				// Major -> Weak -> ConstellationBase
+				// Weak -> Constellation -> BaseConstellation, or
+				// Minor -> Constellation -> BaseConstellation
 			}
-			else if (oldBase.getClass().getName().contains("RegistryConstellations")) {
+			else if (c.getName().endsWith("Constellation$Major")) {
 				c = c.getSuperclass().getSuperclass().getSuperclass();
-				// RegistryConstellations -> WeakSpecial -> Weak -> ConstellationBase
-				// (why are special constellations so weird)
+				// Major -> Weak -> Constellation -> BaseConstellation
+			}
+			else if (c.getName().contains("RegistryConstellations")) {
+				c = c.getSuperclass().getSuperclass().getSuperclass().getSuperclass();
+				// RegistryConstellations -> WeakSpecial -> Weak -> -> Constellation -> BaseConstellation
+				// (why are special Constellations so weird)
 			}
 			Field fieldStarLocations = c.getDeclaredField("starLocations");
 			fieldStarLocations.setAccessible(true);

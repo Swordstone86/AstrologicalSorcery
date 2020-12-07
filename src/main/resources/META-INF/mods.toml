@@ -1,0 +1,30 @@
+modLoader="javafml"
+loaderVersion="[31.2,)"
+issueTrackerURL="https://github.com/Swordstone86/AstrologicalSorcery/issues"
+[[mods]]
+modId="astrosorc"
+version="${file.jarVersion}"
+displayName="Astrological Sorcery"
+displayURL="https://www.curseforge.com/minecraft/mc-mods/astrological-sorcery"
+logoFile="banner.png"
+credits="HellFirePvP & wiiv for the awesome original Astral Sorcery mod. Astrological Sorcery logo background by freepik - www.freepik.com"
+authors="Swordstone"
+description='''Astral Sorcery but with zodiac constellations'''
+[[dependencies.astrosorc]]
+    modId="forge"
+    mandatory=true
+    versionRange="[31.2.36,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.astrosorc]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.15.2]"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.astrosorc]]
+    modId="astralsorcery"
+    mandatory=true
+    versionRange="[1.15.2-1.12.11,]"
+    ordering="AFTER"
+    side="BOTH"

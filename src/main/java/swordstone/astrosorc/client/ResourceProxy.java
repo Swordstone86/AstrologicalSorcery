@@ -1,4 +1,4 @@
-package swordstone.astrosorc.client;
+/*package swordstone.astrosorc.client;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -32,13 +32,14 @@ import swordstone.astrosorc.AstrologicalSorcery;
  * 
  * Date: 5/2/2020
  */
+/*
 public class ResourceProxy extends AbstractResourcePack {
 	public static final String[] DEFAULT_RESOURCE_PACKS = new String[] { "aD", "field_110449_ao", "defaultResourcePacks" };
 
 	private static final Set<String> RESOURCE_DOMAINS = ImmutableSet.of("astralsorcery", "minecraft");
 
 	private static final String PACK_META = "pack.mcmeta";
-	private static final String PROXYPACK_META = "/proxypack.mcmeta";
+	private static final String PROXYPACK_META = "/pack.mcmeta";
 
 	private static final HashMap<String, Boolean> found = new HashMap<>();
 
@@ -104,4 +105,4 @@ public class ResourceProxy extends AbstractResourcePack {
 		return "astrosorc-lang-proxy";
 	}
 
-}
+}*/
