@@ -377,12 +377,8 @@ public class ModifyConstellations
 	@SuppressWarnings("unchecked")
 	private static BaseConstellation clearExistingConstellation(IConstellation old) {
 		BaseConstellation oldBase = (BaseConstellation) old;
-
-		Logger logger = LogManager.getLogger(AstrologicalSorcery.NAME);
-
 		try {
 			Class<?> c = oldBase.getClass();
-			logger.debug(c.getName());
 			if (c.getName().endsWith("Constellation$Weak") ||
 					c.getName().endsWith("Constellation$Minor")) {
 				c = c.getSuperclass().getSuperclass();

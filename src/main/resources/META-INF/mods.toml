@@ -26,5 +26,5 @@ description='''Astral Sorcery but with zodiac constellations'''
     modId="astralsorcery"
     mandatory=true
     versionRange="[1.15.2-1.12.11,]"
-    ordering="AFTER"
+    ordering="BEFORE"
     side="BOTH"

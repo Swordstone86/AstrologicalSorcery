@@ -16,6 +16,7 @@ out
 # gradle
 build
 .gradle
+gradle
 
 # runtime dependencies
 lib
@@ -23,3 +24,4 @@ lib
 # other
 eclipse
 run
+logs
