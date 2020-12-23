@@ -1,6 +1,7 @@
 package swordstone.astrosorc;
 
 import java.lang.reflect.Field;
+import java.security.InvalidParameterException;
 import java.util.List;
 
 import hellfirepvp.astralsorcery.common.constellation.BaseConstellation;
@@ -392,20 +393,11 @@ public class ModifyConstellations
 		BaseConstellation oldBase = (BaseConstellation) old;
 		try {
 			Class<?> c = oldBase.getClass();
-			if (c.getName().endsWith("Constellation$Weak") ||
-					c.getName().endsWith("Constellation$Minor")) {
-				c = c.getSuperclass().getSuperclass();
-				// Weak -> Constellation -> BaseConstellation, or
-				// Minor -> Constellation -> BaseConstellation
-			}
-			else if (c.getName().endsWith("Constellation$Major")) {
-				c = c.getSuperclass().getSuperclass().getSuperclass();
-				// Major -> Weak -> Constellation -> BaseConstellation
-			}
-			else if (c.getName().contains("RegistryConstellations")) {
-				c = c.getSuperclass().getSuperclass().getSuperclass().getSuperclass();
-				// RegistryConstellations -> WeakSpecial -> Weak -> -> Constellation -> BaseConstellation
-				// (why are special Constellations so weird)
+			while (!(c.getName().contains("BaseConstellation"))) {
+				c = c.getSuperclass();
+				if (c.getClass() == new Object().getClass()) {
+					throw new InvalidParameterException("Error getting BaseConstellation class from constellation "+oldBase.getSimpleName());
+				}
 			}
 			Field fieldStarLocations = c.getDeclaredField("starLocations");
 			fieldStarLocations.setAccessible(true);
@@ -419,7 +411,7 @@ public class ModifyConstellations
 	    	connections.clear();
 	    	
 	    	return oldBase;
-		} catch (IllegalAccessException | NoSuchFieldException e) {
+		} catch (IllegalAccessException | NoSuchFieldException | InvalidParameterException e) {
 			e.printStackTrace();
 		}
 		return null;
