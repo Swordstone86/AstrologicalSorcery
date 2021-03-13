@@ -22,7 +22,7 @@
   "advancements.astralsorcery.attune_crystal.title": "Picking up good vibrations",
   "advancements.astralsorcery.attune_crystal.desc": "Attune a crystal to a Constellation.",
   "advancements.astralsorcery.attune_self.title": "I can see the light",
-  "advancements.astralsorcery.attune_self.desc": "Attune yourself to a Bright Constellation.",
+  "advancements.astralsorcery.attune_self.desc": "Attune yourself to a Bright constellation.",
   "advancements.astralsorcery.attune_trait.title": "We have to go deeper",
   "advancements.astralsorcery.attune_trait.desc": "Further modify the attunement of a crystal by adding a Faint trait.",
   "advancements.astralsorcery.celestial_crystals.title": "Homegrown is best",
@@ -597,7 +597,7 @@
   "item.astralsorcery.colored_lens_break": "Break Lens",
   "item.astralsorcery.colored_lens_growth": "Growth Lens",
   "item.astralsorcery.colored_lens_push": "Push Lens",
-  "item.astralsorcery.colored_lens_damage": "Damage Lens",
+  "item.astralsorcery.colored_lens_damage": "Harm Lens",
   "item.astralsorcery.colored_lens_regeneration": "Regeneration Lens",
   "item.astralsorcery.colored_lens_spectral": "Spectral Lens",
 
@@ -637,8 +637,9 @@
   "block.astralsorcery.infused_wood_slab": "Infused Wood Slab",
 
   "block.astralsorcery.rock_crystal_ore": "Rock Crystal Ore",
-  "block.astralsorcery.starmetal_ore": "Starmetal Ore",
   "block.astralsorcery.aquamarine_sand_ore": "Aquamarine Shale",
+  "block.astralsorcery.starmetal_ore": "Starmetal Ore",
+  "block.astralsorcery.starmetal": "Block of Starmetal",
   "block.astralsorcery.glow_flower": "Faint Amaranth",
 
   "block.astralsorcery.rock_collector_crystal": "Collector Crystal",
@@ -686,6 +687,7 @@
   "astralsorcery.journal.constellation.type.major": "Bright",
   "astralsorcery.journal.constellation.type.weak": "Dim",
   "astralsorcery.journal.constellation.type.minor": "Faint",
+  "astralsorcery.journal.constellation.unknown": "? ? ?",
 
   "astralsorcery.constellation.discidia": "Sagittarius",
   "astralsorcery.constellation.discidia.tag": "Offense",
@@ -811,7 +813,7 @@
   "perk.info.astralsorcery.available": "Available",
   "perk.info.astralsorcery.active": "Active",
   "perk.info.astralsorcery.points": "Available points: %s",
-  "perk.info.astralsorcery.disabled": "Perk effects disabled in your modpack.",
+
   "perk.info.astralsorcery.missing_progress": "You're unable to grasp the effects of this perk.",
   "perk.info.astralsorcery.sealed": "Sealed",
   "perk.info.astralsorcery.sealed.break": "[Double-click to break]",
@@ -819,7 +821,7 @@
   "perk.info.astralsorcery.gem.empty": "Empty Gem Socket",
   "perk.info.astralsorcery.gem.remove": "Right-click to remove gem and add to your inventory.",
   "perk.info.astralsorcery.gem.content.item": "Socketed Gem: %s",
-  "perk.info.astralsorcery.gem.content.empty": "Right-click to choose a gem from your inventory.",
+  "perk.info.astralsorcery.gem.content.empty": "Right-click to choose gem from your inventory.",
   "perk.info.astralsorcery.gem.content.empty.none": "You have no gems in your inventory!",
 
   "perk.category.astralsorcery.root.name": "Root Perk",
